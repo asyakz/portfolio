@@ -11,5 +11,7 @@ export const Logo = () => {
 };
 
 const StyledLogo = styled.span`
-  
+font-family: "Comfortaa", serif;
+  font-size: 18px;
+  font-weight: 700;
 `
