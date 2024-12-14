@@ -10,29 +10,26 @@ export const Main = () => {
 
   return (
     <StyledMain>
-      <MainContainer>
+      <Container>
         <FlexWrapper direction={"column"} justify={"center"} align={"start"}>
           <MainTitle>Frontend Developer</MainTitle>
           <NameTitle>Hello, my name is Anastasia Kazantseva</NameTitle>
           <MainText>{aboutMeText}</MainText>
           <FlexWrapper>
-            <Button color={theme.colors.accent} btnType={'primary'}>Projects</Button>
-            <Button color={theme.colors.primaryFont} btnType={'outlined'}>Download CV</Button>
+            <Button as="a" href="#pojects" color={theme.colors.accent} btnType={'primary'}>Projects</Button>
+            <Button as="a" href="../../../assets/files/CV.pdf" color={theme.colors.primaryFont} btnType={'outlined'} download>Download CV</Button>
           </FlexWrapper>
         </FlexWrapper>
-      </MainContainer>
+      </Container>
     </StyledMain>
   );
 };
 
-const StyledMain = styled.div`
-  padding-left: 120px;
-  padding-right: 120px;
-`
-
-const MainContainer = styled(Container)`
-  padding-top: 55px;
-  padding-bottom: 100px;
+const StyledMain = styled.section`
+  
+  ${Container} {
+    padding-top: 55px;
+  }
 `
 
 const MainTitle = styled.h1`

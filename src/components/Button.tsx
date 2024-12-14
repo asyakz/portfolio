@@ -8,6 +8,7 @@ type ButtonPropsType = {
 }
 
 export const Button = styled.button<ButtonPropsType>`
+cursor: pointer;
 min-width: 115px;
 min-height: 43px;
 padding: 8px 24px 8px 24px;
@@ -32,7 +33,7 @@ transition: color .5s ease-in-out,
 
   // outlined
   ${props => props.btnType === 'outlined' && css<ButtonPropsType>`
-  border: 2px solid ${props => props.color || '#8d37aa'};
+  border: 2px solid ${props => props.color || `${theme.colors.primaryFont}`};
   color: ${props => props.color || `${theme.colors.primaryFont}`};
   background-color: transparent;
   `}

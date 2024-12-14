@@ -4,6 +4,7 @@ import { Slide } from "./slide/Slide";
 import imgForSlide1 from "../../assets/images/img-1.webp";
 import imgForSlide2 from "../../assets/images/img-2.webp";
 import imgForSlide3 from "../../assets/images/img-3.webp";
+import { theme } from "../../styles/Theme";
 
 export const Slider = () => {
   return (
@@ -40,7 +41,7 @@ const Pagination = styled.div`
     height: 15px;
     margin: 5px;
     border-radius: 50%;
-    background-color: blueviolet;
+    background-color: ${theme.colors.accent};
   }
 `
 

@@ -6,23 +6,16 @@ import { Container } from "../../../components/Container";
 
 export const Skills = () => {
 
+  const skillsNames = ["vscodeSvg", "JavaScriptSvg", "cssSvg", "htmlSvg", "typescriptSvg", "styledSvg", "figmaSvg", "gitSvg", "reactSvg", "reduxSvg", "sassSvg", "photoshopSvg"];
+
   return (
     <StyledSkills>
       <Container>
-        <SectionTitle>My Skills</SectionTitle>
+        <SectionTitle>Skills</SectionTitle>
         <FlexWrapper wrap={"wrap"} justify="space-between">
-          <Skill iconId={"vscodeSvg"} />
-          <Skill iconId={"JavaScriptSvg"} />
-          <Skill iconId={"cssSvg"} />
-          <Skill iconId={"htmlSvg"} />
-          <Skill iconId={"typescriptSvg"} />
-          <Skill iconId={"styledSvg"} />
-          <Skill iconId={"figmaSvg"} />
-          <Skill iconId={"gitSvg"} />
-          <Skill iconId={"reactSvg"} />
-          <Skill iconId={"reduxSvg"} />
-          <Skill iconId={"sassSvg"} />
-          <Skill iconId={"photoshopSvg"} />
+          {skillsNames.map((item, index) => {
+            return <Skill key={index} iconId={item} MarginBottom={`${index <= 5 ? '84px' : '0px'}`}/>
+          })}
         </FlexWrapper>
       </Container>
     </StyledSkills>
@@ -30,7 +23,4 @@ export const Skills = () => {
 }
 
 const StyledSkills = styled.section`
-  padding-left: 120px;
-  padding-right: 120px;
-  min-height:100vh;
 `

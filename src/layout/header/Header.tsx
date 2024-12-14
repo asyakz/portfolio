@@ -12,13 +12,13 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      <HeaderContainer>
+      <Container>
         <FlexWrapper align="center" justify="space-between">
           <Logo />
           <HeaderMenu menuItems={items} />
           <Photo src={photo} alt="Me" />
         </FlexWrapper>
-      </HeaderContainer>
+      </Container>
     </StyledHeader>
   )
 };
@@ -26,6 +26,11 @@ export const Header = () => {
 const StyledHeader = styled.header`
   min-height: 56px;
   height: 56px;
+
+  ${Container} {
+    position: relative;
+    padding-bottom: 0px;
+  }
 `
 
 const Photo = styled.img`
@@ -36,7 +41,4 @@ const Photo = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-`
-const HeaderContainer = styled(Container)`
-  position: relative;
 `
