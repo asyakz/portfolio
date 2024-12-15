@@ -22,9 +22,9 @@ transition: color .5s ease-in-out,
             background-color 1s ease-in-out;
 
   &:hover {
-    border-color:  ${theme.colors.primaryFont};
+    border-color:  ${theme.colors.font};
     background-color:  ${theme.colors.secondary};
-    color:  ${theme.colors.primaryFont};
+    color:  ${theme.colors.font};
   }
 
 &:not(:last-child) {
@@ -33,8 +33,8 @@ transition: color .5s ease-in-out,
 
   // outlined
   ${props => props.btnType === 'outlined' && css<ButtonPropsType>`
-  border: 2px solid ${props => props.color || `${theme.colors.primaryFont}`};
-  color: ${props => props.color || `${theme.colors.primaryFont}`};
+  border: 2px solid ${props => props.color || `${theme.colors.font}`};
+  color: ${props => props.color || `${theme.colors.font}`};
   background-color: transparent;
   `}
 
@@ -42,7 +42,7 @@ transition: color .5s ease-in-out,
   ${props => props.btnType === 'primary' && css<ButtonPropsType>`
   background-color: ${props => props.color || `${theme.colors.accent}`};
   border: 2px solid ${props => props.color || `${theme.colors.accent}`};
-  color: ${theme.colors.primaryFont};
+  color: ${theme.colors.font};
   `}
 
   ${props => props.active && css<ButtonPropsType>`

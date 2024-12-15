@@ -17,7 +17,7 @@ export const Main = () => {
           <MainText>{aboutMeText}</MainText>
           <FlexWrapper>
             <Button as="a" href="#pojects" color={theme.colors.accent} btnType={'primary'}>Projects</Button>
-            <Button as="a" href="../../../assets/files/CV.pdf" color={theme.colors.primaryFont} btnType={'outlined'} download>Download CV</Button>
+            <Button as="a" href="../../../assets/files/CV.pdf" color={theme.colors.font} btnType={'outlined'} download>Download CV</Button>
           </FlexWrapper>
         </FlexWrapper>
       </Container>

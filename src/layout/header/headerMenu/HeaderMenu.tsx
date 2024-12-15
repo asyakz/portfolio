@@ -5,7 +5,7 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
     <StyledHeaderMenu>
       <ul>
         {props.menuItems.map((item, index) => {
-          return <Item key={index}><Link href="">{item}</Link></Item>
+          return <Item key={index}><Link href="#projects">{item}</Link></Item>
         })}
       </ul>
     </StyledHeaderMenu>
@@ -13,9 +13,6 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledHeaderMenu = styled.nav`
-  /* position: fixed;
-  top: 0;
-  right: calc((1440px - 1000px) / 2); */
   z-index: 999;
   min-height: 56px;
   height: 56px;

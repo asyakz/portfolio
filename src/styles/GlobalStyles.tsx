@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   background-color: ${theme.colors.gray.dark};
-  color: ${theme.colors.primaryFont};
+  color: ${theme.colors.font};
   margin: 0;
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -27,7 +27,8 @@ ul {
 
 a {
   text-decoration: none;
-  color: ${theme.colors.primaryFont};
+  color: ${theme.colors.font};
+  cursor: pointer;
 }
 
 button {

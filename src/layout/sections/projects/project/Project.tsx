@@ -61,7 +61,7 @@ const Title = styled.h3`
   font-size: 40px;
   font-weight: 700;
   line-height: 60px;
-  color: ${theme.colors.primaryFont};
+  color: ${theme.colors.font};
 `
 
 const Text = styled.p`

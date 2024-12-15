@@ -3,7 +3,7 @@ import { theme } from "../styles/Theme";
 
 export const SectionTitle = styled.h2`
   position: relative;
-  color: ${theme.colors.primaryFont};
+  color: ${theme.colors.font};
   text-align: center;
   font-family: "Playfair Display", serif;
   font-size: 48px;
