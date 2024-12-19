@@ -8,6 +8,7 @@ type ButtonPropsType = {
 }
 
 export const Button = styled.button<ButtonPropsType>`
+z-index: 999;
 cursor: pointer;
 min-width: 115px;
 min-height: 43px;
@@ -21,12 +22,6 @@ transition: color .5s ease-in-out,
             border .5s ease-in-out,
             background-color 1s ease-in-out;
 
-  &:hover {
-    border-color:  ${theme.colors.font};
-    background-color:  ${theme.colors.secondary};
-    color:  ${theme.colors.font};
-  }
-
 &:not(:last-child) {
   margin-right: 12px;
 }
@@ -36,6 +31,11 @@ transition: color .5s ease-in-out,
   border: 2px solid ${props => props.color || `${theme.colors.font}`};
   color: ${props => props.color || `${theme.colors.font}`};
   background-color: transparent;
+
+    &:hover {
+      border-color:  ${theme.colors.secondary};
+      color:  ${theme.colors.secondary};
+    }
   `}
 
   // primary
@@ -43,10 +43,15 @@ transition: color .5s ease-in-out,
   background-color: ${props => props.color || `${theme.colors.accent}`};
   border: 2px solid ${props => props.color || `${theme.colors.accent}`};
   color: ${theme.colors.font};
+
+    &:hover {
+      border-color:  ${theme.colors.secondary};
+      background-color:  ${theme.colors.secondary};
+      color:  ${theme.colors.white};
+    }
   `}
 
   ${props => props.active && css<ButtonPropsType>`
   box-shadow: 5px 5px 5px 5px #3534342e;
   `}
-
 `

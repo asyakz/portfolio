@@ -11,7 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-  background-color: ${theme.colors.gray.dark};
+  min-width: 374px;
+  background-color: ${theme.colors.primary};
   color: ${theme.colors.font};
   margin: 0;
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -1,19 +1,15 @@
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { Icon } from "../../../../components/icon/Icon";
 import styled from "styled-components";
+import { theme } from "../../../../styles/Theme";
 
 type SkillPropsType = {
-  iconId: string,
-  MarginBottom?: string
-}
-
-type Margin = {
-  MarginBottom?: string
+  iconId: string
 }
 
 export const Skill = (props: SkillPropsType) => {
   return (
-    <StyledSkill MarginBottom={props.MarginBottom}>
+    <StyledSkill >
       <FlexWrapper align="center" justify="center">
         <Icon iconId={props.iconId} />
       </FlexWrapper>
@@ -21,8 +17,20 @@ export const Skill = (props: SkillPropsType) => {
   );
 }
 
-const StyledSkill = styled.div<Margin>`
+const StyledSkill = styled.div`
   width: 15%;
   padding: 10px;
-  margin-bottom: ${props => props.MarginBottom || '84px'};
+  margin-bottom: 84px;
+
+  @media ${theme.media.XL} {
+    width: 25%;
+  }
+
+  @media ${theme.media.M} {
+    width: 33.33%;
+  }
+
+  @media ${theme.media.tablet} {
+    width: 50%;
+  }
 `

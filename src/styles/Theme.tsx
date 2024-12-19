@@ -8,6 +8,7 @@ export const theme = {
     font: "#25282B",
     shadow: "#7090B01A",
     borderColor: "#E8ECF4",
+    mobileBgcolor: "#25282bf2",
     gray: {
       light: "#828282",
       dark: "#333333",
@@ -15,7 +16,14 @@ export const theme = {
     }
   },
   media: {
-    tablet: 'screen and (max-width: 768px) and (min-width: 577px)',
+    XXXXL: 'screen and (max-width: 1637px)',
+    XXXL: 'screen and (max-width: 1500px)',
+    XXL: 'screen and (max-width: 1470px)',
+    XL: 'screen and (max-width: 1200px)',
+    L: 'screen and (max-width: 992px)',
+    M: 'screen and (max-width: 780px)',
+    tablet: 'screen and (max-width: 768px)',
     mobile: 'screen and (max-width: 576px)',
+    small: 'screen and (max-width: 375px)',
   }
 }

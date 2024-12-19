@@ -26,7 +26,6 @@ export const Slider = () => {
 }
 
 const StyledSlider = styled.div`
-  border: 1px solid red;
   max-width: 100%;
   width: 100%;
   display: flex;
@@ -46,5 +45,5 @@ const Pagination = styled.div`
 `
 
 const TextSlider = styled.p`
-  
+  margin-bottom: 20px;
 `

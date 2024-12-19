@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { theme } from "../../../styles/Theme";
 
 export const HeaderMenu = (props: { menuItems: Array<string> }) => {
   return (
@@ -24,6 +25,10 @@ const StyledHeaderMenu = styled.nav`
     justify-content: center;
     min-height: 100%;
   }
+
+  @media ${theme.media.mobile} {
+    display: none;
+  }
   `
 const Item = styled.li`
     
@@ -34,4 +39,9 @@ const Link = styled.a`
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
+
+  @media ${theme.media.M} {
+    font-size: 16px;
+    line-height: 18px;
+  }
   `

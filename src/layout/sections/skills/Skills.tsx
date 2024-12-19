@@ -14,7 +14,7 @@ export const Skills = () => {
         <SectionTitle>Skills</SectionTitle>
         <FlexWrapper wrap={"wrap"} justify="space-between">
           {skillsNames.map((item, index) => {
-            return <Skill key={index} iconId={item} MarginBottom={`${index <= 5 ? '84px' : '0px'}`}/>
+            return <Skill key={index} iconId={item} />
           })}
         </FlexWrapper>
       </Container>
@@ -23,4 +23,8 @@ export const Skills = () => {
 }
 
 const StyledSkills = styled.section`
+
+  ${Container} {
+    padding-bottom: 60px;
+  }
 `

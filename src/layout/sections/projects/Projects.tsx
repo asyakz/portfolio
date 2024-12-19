@@ -8,19 +8,27 @@ import pro3Img from '../../../assets/images/project-3.webp';
 import { Container } from "../../../components/Container";
 
 export const Projects = () => {
-
-const proText1 ="This art gallery project Blanchard was created as part of the online school Skillbox";
-const proText2 ="The Memory Game was created by me on the basis of vanilla JavaScript";
-const proText3 ="This project of the HighPass photo studio was created as part of the training of the online school Skillbox";
+  
+const data = [
+  {
+    id: 1, title: "Blanchard", text: "This art gallery project Blanchard was created as part of the online school Skillbox", link: "http://t90900f7.beget.tech/", img: pro1Img
+  },
+  {
+    id: 2, title: "Memory Game", text: "The Memory Game was created by me on the basis of vanilla JavaScript", link: "http://h9001901.beget.tech/", img: pro2Img
+  }, 
+  {
+    id: 3, title: "High Pass", text: "This project of the HighPass photo studio was created as part of the training of the online school Skillbox", link: "https://github.com/asyakz/HighPass", img: pro3Img
+  }
+]
 
   return (
     <StyledProjects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <FlexWrapper direction="column" align="center">
-          <Project title={"Blanchard"} text={proText1} src={pro1Img} link={"http://t90900f7.beget.tech/"} btnType={"outlined"}/>
-          <Project title={"Memory Game"} text={proText2} src={pro2Img} link={"http://h9001901.beget.tech/"} orderLeft={2} orderRight={1} btnType={"outlined"} borderRadiusRound={'0px'} borderRadiusZero={'24px'}/>
-          <Project title={"High Pass"} text={proText3} src={pro3Img} link={"https://github.com/asyakz/HighPass"} btnType={"outlined"}/>
+          {data.map((item, index) => {
+            return <Project key={item.id} title={item.title} text={item.text} src={item.img} link={item.link} btnType={"outlined"} direction={`${index % 2 === 0 ? "row" : "row-reverse"}`}/>
+          })}
         </FlexWrapper>
       </Container>
     </StyledProjects>

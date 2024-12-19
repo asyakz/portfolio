@@ -19,6 +19,7 @@ const StyledTabMenu = styled.nav`
     display: flex;
     gap: 30px;
     justify-content: center;
+    margin-bottom: 20px;
 
     li {
       background-color: ${theme.colors.accent};

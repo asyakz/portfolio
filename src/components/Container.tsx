@@ -7,8 +7,12 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100%;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
-  background-color: ${theme.colors.primary};
+
+    @media ${theme.media.M} {
+      padding-bottom: 80px;
+    }
+
 `

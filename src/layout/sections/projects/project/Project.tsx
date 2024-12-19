@@ -8,30 +8,20 @@ type ProjectPropsType = {
   text: string,
   src: string,
   link?: string
-  orderLeft?: 1 | 2,
-  orderRight?: 1 | 2,
   btnType: string,
-  borderRadiusRound?: string,
-  borderRadiusZero?: string,
-}
-
-type PropsType = {
-  orderLeft?: 1 | 2,
-  orderRight?: 1 | 2,
-  borderRadiusRound?: string,
-  borderRadiusZero?: string,
+  direction?: string
 }
 
 export const Project = (props: ProjectPropsType) => {
   return (
     <StyledProject>
-      <FlexWrapper>
-        <LeftContainer orderLeft={props.orderLeft}>
+      <FlexWrapper direction={props.direction}>
+        <LeftContainer>
           <Title>{props.title}</Title>
           <Text>{props.text}</Text>
           <Button as={Link} href={`${props.link || '#'}`} target="_blank" btnType={"outlined"}>View project</Button>
         </LeftContainer>
-        <RightContainer orderRight={props.orderRight} borderRadiusRound={props.borderRadiusRound} borderRadiusZero={props.borderRadiusZero}>
+        <RightContainer>
           <Image src={props.src} alt="" />
         </RightContainer>
       </FlexWrapper>
@@ -42,17 +32,36 @@ export const Project = (props: ProjectPropsType) => {
 const StyledProject = styled.div`
   background-color: ${theme.colors.white};
   border-radius: 24px;
+  overflow: hidden;
   max-width: 992px;
   width: 100%;
   margin-bottom: 80px;
   box-shadow: 0px 6px 64px 0px ${theme.colors.shadow};
   background-color: ${theme.colors.gray.ultraLight};
+
+  @media ${theme.media.tablet} {
+    ${FlexWrapper} {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media ${theme.media.tablet} {
+    margin-bottom: 50px;
+  }
+
+  
 `
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media ${theme.media.tablet} {
+    height: 100%;
+    width: auto;
+  }
+
 `
 
 const Title = styled.h3`
@@ -77,26 +86,30 @@ const Link = styled.a`
   border-radius: 24px;
 `
 
-const LeftContainer = styled.div<PropsType>`
-  order: ${props => props.orderLeft || 1};
+const LeftContainer = styled.div`
   padding: 50px;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+
+  @media ${theme.media.tablet} {
+    width: 100%;
+    padding: 148px 35px 148px 35px;
+  }
 `
 
-const RightContainer = styled.div<PropsType>`
-  order: ${props => props.orderRight || 2};
-  border-top-right-radius: ${props => props.borderRadiusRound || '24px'};
-  border-bottom-right-radius: ${props => props.borderRadiusRound || '24px'};
-  border-bottom-left-radius: ${props => props.borderRadiusZero || '0px'};
-  border-top-left-radius: ${props => props.borderRadiusZero || '0px'};
+const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
   min-height: 524px;
   overflow: hidden;
+
+  @media ${theme.media.tablet} {
+    width: 100%;
+    max-height: 496px;
+  }
 `

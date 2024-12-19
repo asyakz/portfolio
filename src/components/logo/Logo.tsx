@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 
 export const Logo = () => {
   return (
@@ -11,7 +12,13 @@ export const Logo = () => {
 };
 
 const StyledLogo = styled.span`
-font-family: "Comfortaa", serif;
+  font-family: "Comfortaa", serif;
   font-size: 18px;
   font-weight: 700;
+
+  @media ${theme.media.M} {
+    font-size: 16px;
+    display: block;
+    max-width: 80px;
+  }
 `

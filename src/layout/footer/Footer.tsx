@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
-import photoBg from "../../assets/images/footer-bg.svg";
 import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme";
+import footerImg from "../../assets/images/footer-bg.svg";
 
 export const Footer = () => {
   return (
@@ -39,7 +39,6 @@ export const Footer = () => {
           </SocialList>
           <Copyright>Kazantseva Anastasia 2024</Copyright>
         </FlexWrapper>
-        <ImgBackground src={photoBg} alt="Me" />
       </Container>
     </StyledFooter>
   );
@@ -49,7 +48,28 @@ const StyledFooter = styled.footer`
   
   ${Container} {
     position: relative;
+    padding-bottom: 248px;
+
+    &::before {
+      content:'';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-image: url(${footerImg});
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom;
+      z-index: 999;
+    }
+
+    @media ${theme.media.tablet} {
+      padding-bottom: 176px;
+    }
   }
+
+  
 `
 
 const SocialList = styled.ul`
@@ -69,15 +89,10 @@ const SocialLink = styled.a`
 `
 
 const Copyright = styled.small`
+  font-family: "Nunito", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.82px;
+  color: ${theme.colors.gray.light};
   z-index: 1;
-  
-`
-
-const ImgBackground = styled.img`
-  z-index: 0;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 `

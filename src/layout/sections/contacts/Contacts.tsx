@@ -31,7 +31,7 @@ export const Contacts = () => {
 }
 
 const StyledContacts = styled.section`
-  
+  z-index: 0;
 `
 
 const StyledForm = styled.form`
@@ -53,6 +53,10 @@ const StyledForm = styled.form`
   textarea {
     resize: none;
     height: 160px;
+  }
+
+  @media ${theme.media.mobile} {
+    max-width: 100%;
   }
 `
 
