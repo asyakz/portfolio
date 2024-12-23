@@ -1,5 +1,5 @@
 import './App.css';
-import { SectionsWrapper } from './components/SectionsWrapper';
+import { BgWrapper } from './components/bgWrapper/BgWrapper';
 import { Skills } from './layout/sections/skills/Skills';
 import { AboutMe } from './layout/sections/aboutme/AboutMe';
 import { Contacts } from './layout/sections/contacts/Contacts';
@@ -9,7 +9,7 @@ import { Projects } from './layout/sections/projects/Projects';
 function App() {
   return (
     <div className="App">
-      <SectionsWrapper />
+      <BgWrapper />
       <Skills />
       <Projects />
       <AboutMe />

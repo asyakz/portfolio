@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Project } from "./project/Project";
@@ -6,8 +5,9 @@ import pro1Img from '../../../assets/images/project-1.webp';
 import pro2Img from '../../../assets/images/project-2.webp';
 import pro3Img from '../../../assets/images/project-3.webp';
 import { Container } from "../../../components/Container";
+import { S } from "./Projects_Styles";
 
-export const Projects = () => {
+export const Projects:React.FC = () => {
   
 const data = [
   {
@@ -22,7 +22,7 @@ const data = [
 ]
 
   return (
-    <StyledProjects id="projects">
+    <S.Projects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <FlexWrapper direction="column" align="center">
@@ -31,10 +31,8 @@ const data = [
           })}
         </FlexWrapper>
       </Container>
-    </StyledProjects>
+    </S.Projects>
   );
 }
 
-const StyledProjects = styled.section`
-  
-`
+

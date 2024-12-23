@@ -1,31 +1,27 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../../styles/Theme";
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
-  return (
-    <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
-        <span></span>
-      </BurgerButton>
+// Menu
 
-      <MobileMenuPopup isOpen={false}>
-        <ul>
-          {props.menuItems.map((item, index) => {
-            return <Item key={index}><Link href="#projects">{item}</Link></Item>
-          })}
-        </ul>
-      </MobileMenuPopup>
-    </StyledMobileMenu>
-  );
-};
+const MenuItem = styled.li`
+`
 
-const StyledMobileMenu = styled.nav`
-  z-index: 999;
-  display: none;
+const MenuLink = styled.a`
+  font-family: "Raleway", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
 
-  @media ${theme.media.mobile} {
-    display: block;
+  @media ${theme.media.M} {
+    font-size: 16px;
+    line-height: 18px;
   }
+`
+
+// MobileMenu
+
+const MobileMenu = styled.nav`
+  z-index: 999;
 `
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   position: fixed;
@@ -45,29 +41,24 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 
   ul {
     display: flex;
-    gap: 30px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
+
+    li a {
+      color: ${theme.colors.white};
+
+      &:hover {
+          color: ${theme.colors.accent};
+        }
+    }
   }
-  
 `
 
-const Item = styled.li`
-    
-  `
-
-const Link = styled.a`
-  font-family: "Raleway", serif;
-  font-size: 24px;
-  line-height: 18px;
-  color: ${theme.colors.white};
-  font-weight: 500;
-  `
-
 const BurgerButton = styled.button<{ isOpen: boolean }>`
-  z-index: 1;
+  cursor: pointer;
+  z-index: 999999;
   position: fixed;
   top: 15px;
   right: 15px;
@@ -75,7 +66,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   height: 24px;
 
   span {
-    z-index: 2;
+    z-index: 9999;
     display: block;
     width: 24px;
     height: 2px;
@@ -90,6 +81,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
     &::before {
       content: "";
+      z-index: 99999;
       display: block;
       width: 24px;
       height: 2px;
@@ -98,13 +90,15 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(-10px);
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
+        z-index: 99999;
         transform: rotate(-45deg) translateY(0);
-        background-color: ${theme.colors.accent};
+        background-color: ${theme.colors.white};
       `}
     }
 
     &::after {
       content: "";
+      z-index: 99999;
       display: block;
       width: 24px;
       height: 2px;
@@ -113,10 +107,36 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(10px);
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
+        z-index: 99999;
         transform: rotate(45deg) translateY(0);
-        background-color: ${theme.colors.accent};
+        background-color: ${theme.colors.white};
       `}
     }
 
   }
 `
+
+// DesktopMenu
+
+const DesktopMenu = styled.nav`
+  z-index: 999;
+  min-height: 56px;
+  height: 56px;
+
+  ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  min-height: 100%;
+}
+  `
+
+export const S = {
+  MenuItem,
+  MenuLink,
+  BurgerButton,
+  MobileMenuPopup,
+  MobileMenu,
+  DesktopMenu
+}

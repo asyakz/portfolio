@@ -1,15 +1,12 @@
 import styled from "styled-components"
 import { theme } from "../../../../styles/Theme";
+import { Menu } from "../../../header/headerMenu/menu/Menu";
 
-export const TabMenu = (props:{menuItems: Array<string>}) => {
+export const TabMenu:React.FC<{menuItems: Array<string>}> = (props:{menuItems: Array<string>}) => {
   return (
     <StyledTabMenu>
-        <ul>
-          {props.menuItems.map((item, index) => {
-            return <li key={index}><a href="">{item}</a></li>
-          })}
-        </ul>
-      </StyledTabMenu>
+        <Menu menuItems={props.menuItems} />
+    </StyledTabMenu>
   );
 };
 

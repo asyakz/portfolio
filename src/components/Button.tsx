@@ -8,7 +8,7 @@ type ButtonPropsType = {
 }
 
 export const Button = styled.button<ButtonPropsType>`
-z-index: 999;
+z-index: 777;
 cursor: pointer;
 min-width: 115px;
 min-height: 43px;

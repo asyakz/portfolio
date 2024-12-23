@@ -1,22 +1,9 @@
+import { theme } from "../../styles/Theme";
+import photo from "../../assets/images/header-bg.webp";
+import { Container } from '../Container';
 import styled from 'styled-components';
-import { Header } from '../layout/header/Header';
-import { Main } from '../layout/sections/main/Main';
-import { Container } from './Container';
-import { theme } from '../styles/Theme';
-import photo from "../assets/images/header-bg.webp";
 
-export const SectionsWrapper = () => {
-  return (
-    <StyledSectionsWrapper>
-      <Container>
-        <Header />
-        <Main />
-      </Container>
-    </StyledSectionsWrapper>
-  );
-}
-
-const StyledSectionsWrapper = styled.div`
+const BgWrapper = styled.div`
 
 ${Container} {
   position: relative;
@@ -50,3 +37,6 @@ ${Container} {
     overflow: hidden;
   }
 `
+export const S = {
+  BgWrapper
+}
