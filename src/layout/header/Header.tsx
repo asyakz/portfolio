@@ -4,6 +4,7 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import { MobileMenu } from "./headerMenu/mobileMenu/MobileMenu";
 import React from "react";
 import { S } from "./Header_Styles";
+import { Container } from "../../components/Container";
 
 export const Header: React.FC = () => {
 
@@ -23,6 +24,7 @@ export const Header: React.FC = () => {
 
   return (
     <S.Header>
+      <Container>
         <FlexWrapper align="center" justify="space-between">
           <Logo />
           {width < breakpoint 
@@ -32,6 +34,7 @@ export const Header: React.FC = () => {
           <DesktopMenu menuItems={items} />
           }
         </FlexWrapper>
+        </Container>
     </S.Header>
   )
 };

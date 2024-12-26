@@ -41,11 +41,9 @@ transition: color .5s ease-in-out,
   // primary
   ${props => props.btnType === 'primary' && css<ButtonPropsType>`
   background-color: ${props => props.color || `${theme.colors.accent}`};
-  border: 2px solid ${props => props.color || `${theme.colors.accent}`};
   color: ${theme.colors.font};
 
     &:hover {
-      border-color:  ${theme.colors.secondary};
       background-color:  ${theme.colors.secondary};
       color:  ${theme.colors.white};
     }

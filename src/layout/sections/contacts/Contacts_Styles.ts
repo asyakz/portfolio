@@ -3,10 +3,12 @@ import { Button } from "../../../components/Button";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 
 const Contacts = styled.section`
-  z-index: 0;
+  z-index: 700;
+  position: relative; 
+  background-color: ${theme.colors.primary};
 `
 
-const StyledForm = styled.form`
+const Form = styled.form`
   margin: 0 auto;
   max-width: 400px;
   width: 100%;
@@ -57,6 +59,6 @@ const Field = styled.input`
 
 export const S = {
   Contacts,
-  StyledForm,
+  Form,
   Field
 }

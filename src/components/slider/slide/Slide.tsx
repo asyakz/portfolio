@@ -1,16 +1,19 @@
 import { S } from "../Slider_Styles";
 
 type SlidePropsType = {
-  src: string
+  src: string,
+  slideLink?: string,
+  slideText?: string
 }
 
-export const Slide = (props: SlidePropsType) => {
+export const Slide: React.FC<SlidePropsType> = (props: SlidePropsType) => {
   return (
     <S.Slide>
-          <S.Image src={props.src} />
-          <S.Text>
-            Lorem ipsum dolor sit
-          </S.Text>
+      <S.SlideWrapper>
+        <S.Image src={props.src} />
+        <S.Text>See more:</S.Text>
+        <S.Link href={props.slideLink} target="blank">{props.slideText}</S.Link>
+      </S.SlideWrapper>
     </S.Slide>
   );
 }

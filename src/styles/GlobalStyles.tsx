@@ -22,6 +22,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+section {
+  padding-bottom: 144px;
+  
+  @media ${theme.media.M} {
+      padding-bottom: 80px;
+    }
+}
+
 ul {
   list-style: none;
 }

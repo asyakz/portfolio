@@ -16,9 +16,10 @@ export const theme = {
     }
   },
   media: {
-    XXXXL: 'screen and (max-width: 1637px)',
-    XXXL: 'screen and (max-width: 1500px)',
-    XXL: 'screen and (max-width: 1470px)',
+    infinit: 'screen and (min-width: 1920px)',
+    XXXXL: 'screen and (max-width: 1500px)',
+    XXXL: 'screen and (max-width: 1450px)',
+    XXL: 'screen and (max-width: 1244px)',
     XL: 'screen and (max-width: 1200px)',
     L: 'screen and (max-width: 992px)',
     M: 'screen and (max-width: 780px)',

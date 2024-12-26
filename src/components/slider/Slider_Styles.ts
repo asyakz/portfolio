@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/Theme";
+import { SwiperSlide } from 'swiper/react';
 
 // Slider
 
@@ -11,52 +12,61 @@ const Slider = styled.div`
   align-items: center;
 `
 
-const Pagination = styled.div`
-  span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin: 5px;
-    border-radius: 50%;
-    background-color: ${theme.colors.accent};
-  }
-`
-
 const TextSlider = styled.p`
   margin-bottom: 20px;
+  max-width: 80%;
+`
+
+const TextWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  min-height: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `
 
 // Slide
 
-const Slide = styled.div`
-  max-width: 33.33%;
+const Slide = styled(SwiperSlide)`
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media ${theme.media.tablet} {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+`
+const SlideWrapper = styled.div`
+  background-color: ${theme.colors.white};
   display: flex;
   border-radius: 24px;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 20px;
-  background-color: ${theme.colors.white};
-  box-shadow: 0px 6px 64px 0px ${theme.colors.shadow};
-
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
 `
+
 const Image = styled.img`
   max-width: 100%;
   height: auto;
   border-radius: 24px;
 `
+
 const Text = styled.span`
+padding-top: 10px;
 `
 
+const Link = styled.a`
+  color: ${theme.colors.accent};
+`
 
 export const S ={
   Slider,
-  Pagination,
   TextSlider,
   Slide,
   Image,
-  Text
+  Text,
+  SlideWrapper,
+  Link,
+  TextWrapper
 }

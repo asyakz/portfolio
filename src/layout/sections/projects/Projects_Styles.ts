@@ -3,6 +3,7 @@ import { theme } from "../../../styles/Theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 
 const Projects = styled.section`
+  position: relative;
 `
 
 // Project
@@ -26,7 +27,6 @@ const Project = styled.div`
   @media ${theme.media.tablet} {
     margin-bottom: 50px;
   }
-
   
 `
 
@@ -36,7 +36,6 @@ const Image = styled.img`
   object-fit: cover;
 
   @media ${theme.media.tablet} {
-    height: 100%;
     width: auto;
   }
 `

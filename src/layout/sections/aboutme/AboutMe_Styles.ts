@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 
 const AboutMe = styled.section`
+  position: relative;
+  background-color: ${theme.colors.primary};
 `
 
 const TextAboutMe = styled.p`
@@ -12,7 +14,8 @@ const TextAboutMe = styled.p`
   line-height: 27px;
   color: ${theme.colors.gray.light};
 `
-export const S ={
+
+export const S = {
   AboutMe,
   TextAboutMe
 }

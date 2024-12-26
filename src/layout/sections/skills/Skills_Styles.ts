@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
-import { Container } from "../../../components/Container";
 
 const Skills = styled.section`
-
-  ${Container} {
-    padding-bottom: 60px;
-  }
+  position: relative;
+  background-color: ${theme.colors.primary};
+  padding-bottom: 30px;
 `
 
 // Skill
@@ -15,6 +13,9 @@ const Skill = styled.div`
   width: 15%;
   padding: 10px;
   margin-bottom: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media ${theme.media.XL} {
     width: 25%;

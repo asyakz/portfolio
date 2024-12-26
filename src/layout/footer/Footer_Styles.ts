@@ -1,16 +1,48 @@
 import styled from "styled-components";
-import footerImg from "../../assets/images/footer-bg.svg";
-import { Container } from "../../components/Container";
+import footerImg from "../../assets/images/footer-bg.png";
 import { theme } from "../../styles/Theme";
 
 const Footer = styled.footer`
-  
-  ${Container} {
-    position: relative;
-    padding-bottom: 248px;
+  position: relative;
+  min-height: 460px;
+  background-color: ${theme.colors.primary};
 
-    &::before {
+  @media ${theme.media.XXXXL} {
+    min-height: 400px;
+  }
+
+  @media ${theme.media.XXXL} {
+    min-height: 380px;
+  }
+
+  @media ${theme.media.XXL} {
+    min-height: 330px;
+  }
+
+  @media ${theme.media.XL} {
+    min-height: 310px;
+  }
+
+  @media ${theme.media.L} {
+    min-height: 300px;
+  }
+
+  @media ${theme.media.M} {
+    min-height: 290px;
+  }
+
+  @media ${theme.media.tablet} {
+    min-height: 280px;
+  }
+
+  @media ${theme.media.mobile} {
+    min-height: 276px;
+  }
+
+  &::before {
       content:'';
+      z-index: 888;
+      overflow: visible;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -21,16 +53,15 @@ const Footer = styled.footer`
       background-size: contain;
       background-position: bottom;
       z-index: 700;
-    }
 
-    @media ${theme.media.tablet} {
-      padding-bottom: 176px;
+      @media ${theme.media.infinit} {
+        background-size: 100vw 460px;
+      }
     }
-  }
 `
 
 const SocialList = styled.ul`
-  z-index: 1;
+  z-index: 998;
   display: flex;
   gap: 30px;
 `
@@ -39,6 +70,7 @@ const SocialItem = styled.li`
 `
 const SocialLink = styled.a`
   color: ${theme.colors.font};
+  transition: color .4s ease;
 
   &:hover {
     color:${theme.colors.accent};

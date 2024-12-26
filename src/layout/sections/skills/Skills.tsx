@@ -9,7 +9,7 @@ export const Skills: React.FC = () => {
   const skillsNames = ["vscodeSvg", "JavaScriptSvg", "cssSvg", "htmlSvg", "typescriptSvg", "styledSvg", "figmaSvg", "gitSvg", "reactSvg", "reduxSvg", "sassSvg", "photoshopSvg"];
 
   return (
-    <S.Skills>
+    <S.Skills id="skills">
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <FlexWrapper wrap={"wrap"} justify="space-between">

@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../../styles/Theme";
+import { Link } from "react-scroll";
 
 // Menu
 
 const MenuItem = styled.li`
 `
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   font-family: "Raleway", serif;
   font-size: 18px;
   font-weight: 500;
@@ -48,8 +49,11 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 
     li a {
       color: ${theme.colors.white};
+      font-size: 44px;
+      line-height: 74px;
+      transition: color .4s ease;
 
-      &:hover {
+      &:hover, &.active {
           color: ${theme.colors.accent};
         }
     }
@@ -88,10 +92,11 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(-10px);
+      transition: transform .2s ease-in-out;
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         z-index: 99999;
-        transform: rotate(-45deg) translateY(0);
+        transform: rotate(45deg) translateY(0);
         background-color: ${theme.colors.white};
       `}
     }
@@ -105,14 +110,14 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(10px);
+      transition: transform .2s ease-in-out;
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         z-index: 99999;
-        transform: rotate(45deg) translateY(0);
+        transform: rotate(-45deg) translateY(0);
         background-color: ${theme.colors.white};
       `}
     }
-
   }
 `
 
@@ -129,6 +134,14 @@ const DesktopMenu = styled.nav`
   gap: 30px;
   justify-content: center;
   min-height: 100%;
+
+  li a {
+    transition: color .4s ease;
+    
+      &:hover, &.active {
+          color: ${theme.colors.secondary};
+        }
+    }
 }
   `
 

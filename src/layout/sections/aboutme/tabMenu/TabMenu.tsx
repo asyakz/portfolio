@@ -1,28 +1,17 @@
-import styled from "styled-components"
-import { theme } from "../../../../styles/Theme";
-import { Menu } from "../../../header/headerMenu/menu/Menu";
+import { S } from "./TabMenu_Styles";
 
-export const TabMenu:React.FC<{menuItems: Array<string>}> = (props:{menuItems: Array<string>}) => {
+type TabsPropsType = {
+  setActiveTab: any,
+  activeTab: any
+}
+
+export const TabMenu:React.FC<TabsPropsType> = ({activeTab, setActiveTab}) => {
+
   return (
-    <StyledTabMenu>
-        <Menu menuItems={props.menuItems} />
-    </StyledTabMenu>
+    <S.TabMenu>
+      <S.Tab btnType={"primary"} active={activeTab === 0} onClick={() => setActiveTab(0)}>Macrame Jewelry Designer</S.Tab>
+      <S.Tab btnType={"primary"} active={activeTab === 1} onClick={() => setActiveTab(1)}>Photographer</S.Tab>
+    </S.TabMenu>
   );
 };
 
-const StyledTabMenu = styled.nav`
-  z-index: 10;
-  ul {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-bottom: 20px;
-
-    li {
-      background-color: ${theme.colors.accent};
-      padding: 10px 30px 10px 30px;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-  }
-`

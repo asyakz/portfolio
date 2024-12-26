@@ -4,7 +4,11 @@ export const Menu: React.FC<{ menuItems: Array<string> }> = (props: { menuItems:
   return (
     <ul>
       {props.menuItems.map((item, index) => {
-        return <S.MenuItem key={index}><S.MenuLink href="#projects">{item}</S.MenuLink></S.MenuItem>
+        return <S.MenuItem key={index}>
+          <S.MenuLink to={item.toLowerCase()} smooth={true} activeClass="active">
+            {item}
+          </S.MenuLink>
+        </S.MenuItem>
       })}
     </ul>
   );
